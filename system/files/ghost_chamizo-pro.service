@@ -1,0 +1,14 @@
+[Unit]
+Description=Ghost systemd service for blog: chamizo-pro
+Documentation=https://ghost.org/docs/
+
+[Service]
+Type=simple
+WorkingDirectory=/var/www/chamizo.blog
+User=999
+Environment="NODE_ENV=production"
+ExecStart=/usr/local/bin/node /usr/local/bin/ghost run
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
